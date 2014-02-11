@@ -22,7 +22,7 @@ $(document).ready(function() {
 
 function startTutorial() {
 	$('#button').empty();
-	$('#next').html('<button>Next</button>');
+	$('#next').html('<button class="btn btn-primary">Next</button>');
 	next();
 }
 
