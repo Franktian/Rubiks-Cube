@@ -4,13 +4,6 @@
 		<link rel="stylesheet" type="text/css" href="stylesheets/jquery-ui.css">
 		<link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 		<link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.css">
-
-		<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-		</script>
-		<script type="text/javascript"
-		src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-		</script>
 	</head>
 	<body>
 		<!-- HEADER -->
@@ -33,8 +26,8 @@
 					<div class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
 						<li><a href="index.html">Home</a></li>
-						<li><a href="definition.html">Definition</a></li>
-						<li class="active"><a href="calculation.html">Tutorial</a></li>
+						<li class="active"><a href="definition.html">Definition</a></li>
+						<li><a href="calculation.html">Tutorial</a></li>
 						<li><a href="http://www.dgp.toronto.edu/~karan/courses/csc490/winter_2014/">CSC490</a></li>
 						<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
@@ -56,38 +49,15 @@
 						</ul>-->
 					</div><!--/.nav-collapse -->
 		        </div><!--/.container-fluid -->
-	      </div>
+	    	</div>
 			<div class="jumbotron">
-				<h2>Rubik's cube total combination tutorial</h2>
-				
-
-				<p>Consider the $8$ corner pieces. Dispite the orientation for the corners, we have $8$ unique pieces to place in $8$ different areas, that is $8$ factorial \(8!\). And then consider the orientation, each of the eight corner pieces has $3$ different directions, which leads to $3$ to the power of $8$ different situations \(3^8\) .</p>
-
-				<p>So this is $8! \times 3^8$</p>
-
-				<p>Similarly to how we calculate the corner pieces. This time consider the side pieces. In a standard $3 \times 3$ Rubik's cube, we have $12$ unique side pieces each contains two different colors. To put these $12$ pieces in 12 different positions, we have $12!$ situations. And consider orientation, that is $2^12$</p>,
-
-				<p>The above calculation leads us to $8! \times 3^8 \times 12! \times 2^{12}$.</p>
-
-				<div id="next">
-
-				</div>
-				<div id="container">
-
-				</div>
-				<div id="startButton" >
-					<button class="btn btn-success">Start the tutorial</button>
-				</div>
-				
-				
+				<h2>Project definition</h2>
 	        </div>
 
 		</div>
 
 		<script src="javascripts/jquery.js"></script>
-		<script src="javascripts/calculate.js"></script>
 		<script src="javascripts/jquery-ui.js"></script>
 		<script src="javascripts/bootstrap.js"></script>
-
 	</body>
 </html>

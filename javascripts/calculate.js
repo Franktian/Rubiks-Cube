@@ -1,6 +1,6 @@
-var tutorial = [ "<p>Consider the 8 corner pieces. Dispite the orientation for the corners, we have 8 unique pieces to place in 8 different areas, that is 8 factorial(8!). And then consider the orientation, each of the eight corner pieces has 3 different directions, which leads to 3 to the power 8 different situations(3^8).</p>",
+var tutorial = [ "<p>Consider the 8 corner pieces. Dispite the orientation for the corners, we have 8 unique pieces to place in 8 different areas, that is 8 factorial(8!). And then consider the orientation, each of the eight corner pieces has 3 different directions, which leads to 3 to the power 8 different situations \(3^8\) .</p>",
 				 "<p>Similarly to how we calculate the corner pieces. This time consider the side pieces. In a standard 3 x 3 Rubik's cube, we have 12 unique side pieces each contains two different colors. To put these 12 pieces in 12 different positions, we have 12 factorial situations(12!). And consider orientation, that is 2 to the power of 12(2!)</p>",
-				 "<p>The above calculation leads us to 8! x 3^8 x 12! x 2^12.</p>",
+				 "<p>The above calculation leads us to 8! x $3^8$ x 12! x $2^12$.</p>",
 				 "<p>Consider when you take the cube apart and recombine it, there is a chance that you make the correct one, i.e. you can solve this cube. And that is 1/12 to be exact.</p>",
 				 "<p>And this situation is because in a standard 3 x 3 rubik's cube, there are some invalid position for the pieces.</p>",
 				 "<p>1. You can't rotate a single corner piece.</p><p>2. You can't rotate a single side piece</p><p>3. You can't swap two side pieces.</p>",
@@ -12,16 +12,17 @@ var tutorial = [ "<p>Consider the 8 corner pieces. Dispite the orientation for t
 var tutCount = 0;
 $(document).ready(function() {
 
-	$('#button').on('click', function() {
+	$('#startButton').on('click', function() {
 		startTutorial();
 	});
+
 	$('#next').on('click', function() {
 		next();
 	});
 });
 
 function startTutorial() {
-	$('#button').empty();
+	$('#startButton').empty();
 	$('#next').html('<button class="btn btn-primary">Next</button>');
 	next();
 }
