@@ -4,7 +4,8 @@
 		<link rel="stylesheet" type="text/css" href="stylesheets/jquery-ui.css">
 		<link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 		<link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.css">
-
+		<link rel="stylesheet" type="text/css" media="screen" href="stylesheets/social-button.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="stylesheets/fontawesome.css">
 		<script type="text/x-mathjax-config">
 		MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 		</script>
@@ -37,9 +38,9 @@
 						<li class="active"><a href="calculation.html">Tutorial</a></li>
 						<li><a href="http://www.dgp.toronto.edu/~karan/courses/csc490/winter_2014/">CSC490</a></li>
 						<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Other <b class="caret"></b></a>
 						<ul class="dropdown-menu">
-						<li><a href="#">Action</a></li>
+						<li><a href="http://franktian.github.io/webpage/" target="_blank">About Frank</a></li>
 						<li><a href="#">Another action</a></li>
 						<li><a href="#">Something else here</a></li>
 						<li class="divider"></li>
@@ -49,6 +50,13 @@
 						</ul>
 						</li>
 						</ul>
+
+						<ul class="nav navbar-nav navbar-right">
+			              <li><a href="https://www.facebook.com/frank.tian.5"><i class="fa fa-facebook"></i></a></li>
+			              <li><a href="http://www.linkedin.com/pub/yawen-tian/69/a64/9b3"><i class="fa fa-linkedin"></i></a></li>
+			              <li><a href="https://github.com/Franktian"><i class="fa fa-github"></i></a></li>
+			              <li><a href="https://plus.google.com/u/0/103368964518127000225/posts"><i class="fa fa-google-plus"></i></a></li>
+			            </ul>
 						<!--<ul class="nav navbar-nav navbar-right">
 						<li class="active"><a href="./">Default</a></li>
 						<li><a href="../navbar-static-top/">Static top</a></li>
@@ -60,16 +68,45 @@
 			<div class="jumbotron">
 				<h2>Rubik's cube total combination tutorial</h2>
 				
+				
+				<p class="instruction">Consider the $8$ corner pieces. Dispite the orientation for the corners, we have $8$ unique pieces to place in $8$ different areas, that is $8$ factorial \(8!\). And then consider the orientation, each of the eight corner pieces has $3$ different directions, which leads to $3$ to the power of $8$ different situations \(3^8\) .</p>
 
-				<p>Consider the $8$ corner pieces. Dispite the orientation for the corners, we have $8$ unique pieces to place in $8$ different areas, that is $8$ factorial \(8!\). And then consider the orientation, each of the eight corner pieces has $3$ different directions, which leads to $3$ to the power of $8$ different situations \(3^8\) .</p>
+				<p class="instruction">So this is $8! \times 3^8$</p>
 
-				<p>So this is $8! \times 3^8$</p>
+				<p class="instruction">Similarly to how we calculate the corner pieces. This time consider the side pieces. In a standard $3 \times 3$ Rubik's cube, we have $12$ unique side pieces each contains two different colors. To put these $12$ pieces in 12 different positions, we have $12!$ situations. And consider orientation, that is $2^{12}$</p>
 
-				<p>Similarly to how we calculate the corner pieces. This time consider the side pieces. In a standard $3 \times 3$ Rubik's cube, we have $12$ unique side pieces each contains two different colors. To put these $12$ pieces in 12 different positions, we have $12!$ situations. And consider orientation, that is $2^{12}$</p>
+				<p class="instruction">In this case, we have $12! \times 2^{12}$</p>
 
-				<p>In this case, we have $12! \times 2^{12}$</p>
+				<p class="instruction">The above calculation leads us to $8! \times 3^8 \times 12! \times 2^{12}$.</p>
 
-				<p>The above calculation leads us to $8! \times 3^8 \times 12! \times 2^{12}$.</p>
+				<p class="instruction">Then let's step ahead to the part divided by $12$</p>
+
+				<p class="instruction">Consider when you take the cube apart and recombine it, there is a chance that you make the correct one, i.e. you can solve this cube. And that is $\frac{1}{12}$ the chance 	to be exact.</p>
+
+				<p class="instruction">And this situation is because in a standard $3 \times 3$ rubik's cube, there are some invalid positions for the pieces:</p>
+
+				<p class="instruction">1. You can't rotate a single corner piece.</p>
+
+				<p class="instruction">2. You can't rotate a single side piece.</p>
+
+				<p class="instruction">3. You can't swap two side pieces.</p>
+
+				<p class="instruction">None of these three situation can be achieved by just a sequence of valid rotation of a rubik's cube.(i.e. you have to achieve this by taking the cube apart)</p>
+
+				<p class="instruction">And the first situation leads to three different combinations, the second leads to $2$ and the third leads to two.</p>
+
+				<p class="instruction">The total situations is then $3 \times 2 \times 2 = 12$</p>
+
+
+				<p class="instruction">In another word, There are totally $12$ different rubik's cube you can get if you take the cube apart and recombine it. And only one of them is actually SOVABLE</p>
+
+ 				<p class="instruction">Hence from the formula we get(Contains every situations for the RIGHT and WRONG rubik's cube), divided by $12$ is the final answer to the total combinations of a Rubik's Cube.</p>
+
+ 				<p class="instruction">
+ 					FINAL ANSWER:
+ 					$\frac{8! \times 3^8 \times 12! \times 2^{12}}{12} = 43,252,003,274,489,856,000$
+ 				</p>
+
 
 				<div id="next">
 
@@ -78,7 +115,9 @@
 
 				</div>
 				<div id="startButton" >
+					<p>In this small tutorial, you will find step-by-step instructions of how to calculate the total permutations of a standard $3 \times 3$ Rubik's cube</p>
 					<button class="btn btn-success">Start the tutorial</button>
+
 				</div>
 				
 				

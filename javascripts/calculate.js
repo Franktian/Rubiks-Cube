@@ -10,34 +10,46 @@ var tutorial = [ "<p>Consider the 8 corner pieces. Dispite the orientation for t
  				 "<p>In another word, There are 12 different rubik's cube you can get if you take the cube apart and recombine it. And only one of them is SOVABLE for us.</p>",
  				 "<p>ence from the formula we get(Contains every situations for the RIGHT and WRONG rubik's cube), divided by 12 is the final answer to the total combinations of a Rubik's Cube.</p>"];
 var tutCount = 0;
+var instruction;
 $(document).ready(function() {
-
+	instruction = $('.instruction');
+	instruction.hide();
 	$('#startButton').on('click', function() {
-		startTutorial();
+		startTutorial(instruction);
 	});
 
 	$('#next').on('click', function() {
-		next();
+		next(instruction);
 	});
+
+
 });
 
-function startTutorial() {
-	$('#startButton').empty();
-	$('#next').html('<button class="btn btn-primary">Next</button>');
-	next();
+function startTutorial(elements) {
+	$('#startButton').hide();
+	$('#next').append('<button class="btn btn-primary">Next</button>');
+	next(elements);
 }
 
-function next() {
-	if(tutCount < tutorial.length) {
-		nextExp(tutCount);
+function next(elements) {
+	if (tutCount < elements.length) {
+		nextExp(tutCount, elements);
 		tutCount++;
+	} else {
+		$('#next').empty();
+		$('#next').append('<button id="back" class="btn btn-primary">Back to home</button>');
+		$('#back').on('click', function () {
+			window.location.href = "index.html";
+		});
 	}
 }
 
-function nextExp(cout) {
+function nextExp(cout, elements) {
 	//$('#container').empty();
-	var exp = $(tutorial[cout]).hide();
-	$('#container').append(exp);
+	var exp = elements.eq(cout);
+	//$('#container').append(exp);
 	exp.fadeIn(1000);
 }
+
+
 
