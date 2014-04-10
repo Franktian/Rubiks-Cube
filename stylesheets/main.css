@@ -1,0 +1,9 @@
+.header {
+	background-image:url('../icon.png');
+	background-size:50px 50px;
+	background-repeat:no-repeat;
+}
+
+.hidden {
+	visibility:hidden;
+}
